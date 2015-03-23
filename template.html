@@ -163,10 +163,7 @@
      https://developer.mozilla.org/en/CSS/CSS_transitions
      How to use CSS3 Transitions: */
   section {
-    -moz-transition: left 400ms linear 0s;
-    -webkit-transition: left 400ms linear 0s;
-    -ms-transition: left 400ms linear 0s;
-    transition: left 400ms linear 0s;
+    transition: transform 400ms linear 0s;
   }
   .view section {
     -moz-transition: none;
@@ -180,11 +177,11 @@
   }
 
   /* Before */
-  section { left: -150%; }
+  section { transform: translateX(-150%); }
   /* Now */
-  section[aria-selected] { left: 0; }
+  section[aria-selected] { transform: translateX(0); }
   /* After */
-  section[aria-selected] ~ section { left: +150%; }
+  section[aria-selected] ~ section { transform: translateX(150%); }
 
   /* Incremental elements */
 
